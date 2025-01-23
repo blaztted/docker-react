@@ -14,8 +14,9 @@ jobs:
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       # Build and test the Docker image
-      - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
-      - run: docker run -e CI=true cygnetops/react-test npm test
+      - run: docker build -t blaztted/frontend -f Dockerfile.dev .
+      - run: docker run -e CI=true blaztted/frontend npm test
+      
 
       # Generate deployment package
       - name: Generate deployment package
